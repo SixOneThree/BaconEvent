@@ -1,5 +1,6 @@
 package io.github.SixOneThree.BaconEvent;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -7,7 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class BaconEventCommandExecutor implements CommandExecutor {
-	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] split) {
 		if (cmd.getName().equalsIgnoreCase("quadsmite")) {
 			if (!(sender instanceof Player)) {
 				sender.sendMessage("This command can only be run by players!");
@@ -35,6 +36,30 @@ public class BaconEventCommandExecutor implements CommandExecutor {
 				}
 			}
 			return true;
+		}
+		if (cmd.getName().equalsIgnoreCase("maxhealth")) {
+			if (!(sender instanceof Player)) {
+				//TODO Allow console to use /maxhealth
+				return true;
+			} else {
+				Player player = (Player) sender;
+				if (player.hasPermission("baconevent.maxhealth")) {
+					if (!(split.length == 2)) {
+						player.sendMessage("Usage: /maxhealth <player> <maxhealth>");
+						return true;
+					} else {
+						Player target = (Bukkit.getServer().getPlayer(split[0]));
+						if (target == null) {
+							sender.sendMessage(split[0] + " is not online!");
+							return false;
+						} else {
+							Double MaxHealth = Double.parseDouble(split[1]);
+							target.setMaxHealth(MaxHealth);
+							target.setHealth(MaxHealth);
+						}
+					}
+				}
+			}
 		}
 		return false;
 	}

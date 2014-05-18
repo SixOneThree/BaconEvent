@@ -7,3 +7,8 @@ commands:
     usage: /quadsmite
     permission: baconevent.quadsmite
     permission-message: "You are not thor!"
+  maxhealth:
+    description: Set the max health of a specific player
+    usage: /maxhealth <player> <maxhealth>
+    permission: baconevent.maxhealth
+    permission-message: "You do not have permission to use /maxhealth"

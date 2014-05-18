@@ -8,6 +8,7 @@ public final class BaconEvent extends JavaPlugin {
 	public void onEnable() {
 		instance = this;
 		getCommand("quadsmite").setExecutor(new BaconEventCommandExecutor());
+		getCommand("maxhealth").setExecutor(new BaconEventCommandExecutor());
 	}
 	
 	public static BaconEvent getInstance() {
