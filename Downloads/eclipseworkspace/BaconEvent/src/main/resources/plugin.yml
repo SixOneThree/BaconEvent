@@ -1,0 +1,9 @@
+name: BaconEvent
+main: io.github.SixOneThree.BaconEvent.BaconEvent
+version: 0.01
+commands:
+	trismite:
+		description: Lightning strikes in a triangle around you
+		usage: /trismite
+		permission: baconevent.trismite
+		permission-message: "You are not thor!"
