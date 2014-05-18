@@ -7,7 +7,7 @@ public final class BaconEvent extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		instance = this;
-		getCommand("trismite").setExecutor(new BaconEventCommandExecutor());
+		getCommand("quadsmite").setExecutor(new BaconEventCommandExecutor());
 	}
 	
 	public static BaconEvent getInstance() {
