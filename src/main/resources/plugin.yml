@@ -11,4 +11,9 @@ commands:
     description: Set the max health of a specific player
     usage: /maxhealth <player> <maxhealth>
     permission: baconevent.maxhealth
-    permission-message: "You do not have permission to use /maxhealth"
+    permission-message: "You do not have permission to /maxhealth"
+  hub:
+    description: Teleport to the hub
+    usage: /hub
+    permission: baconevent.hub
+    permission-message: "You do not have access to /hub"
